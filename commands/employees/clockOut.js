@@ -20,7 +20,7 @@ module.exports = {
        const minutes= seconds / 60;
        const finalTime = Math.round(minutes);
        
-       let timeClock = client.channels.cache.get(`866501334123413535`);
+       let timeClock = client.channels.cache.get(`<your log channel id>`);
        message.author.send(`${message.author} you have clocked out!`).then(message.delete({timeout: 5000}));
        timeClock.send(`${message.author} clocked out and worked ${finalTime} minutes`);
     }
