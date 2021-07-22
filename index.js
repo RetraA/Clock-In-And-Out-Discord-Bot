@@ -58,15 +58,15 @@ client.on("message", async message => {
 });
 
 client.on('guildMemberAdd', member => {
-    let welcomeChannel = client.channels.cache.get(`867060942670790665`);
+    let welcomeChannel = client.channels.cache.get(`<your welcome channel>`);
     welcomeChannel.send(`Welcome <@${member.id}> to Hooker's Towing!`)
     console.log(`${member.user.username} joined the server`)
-    let role = member.guild.roles.cache.find(role => role.id === "866521760165658664");
+    let role = member.guild.roles.cache.find(role => role.id === "<your role id>");
     member.roles.add(role);
 });
 
 client.on('guildMemberRemove', member => {
-    let leaveChannel = client.channels.cache.get(`867060942670790665`);
+    let leaveChannel = client.channels.cache.get(`<your leave channel>`);
     leaveChannel.send(`Goodbye <@${member.id}>!`)
 })
 
