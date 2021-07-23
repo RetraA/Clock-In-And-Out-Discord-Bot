@@ -24,7 +24,7 @@ module.exports = {
        .setColor(`YELLOW`)
        .setTitle("Clock Out Log")
        .setTimestamp()
-       .setThumbnail('https://i.imgur.com/3xgt3jg.png')
+       .setThumbnail(`${message.author.avatarURL()}`)
        .addField("**User:**", `${message.author}`)
        .addField(`**Total Minutes Worked:**`, `${finalTime}`)
        .setFooter(`by Retra#1337`, 'https://i.imgur.com/3xgt3jg.png')
