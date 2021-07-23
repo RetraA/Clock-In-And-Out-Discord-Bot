@@ -1,4 +1,5 @@
 const map = require('../../index.js').map
+const { MessageEmbed } = require("discord.js")
 
 module.exports = {
     name: "clockin",
@@ -12,7 +13,20 @@ module.exports = {
         }
 
         map.set(message.author.id, d)
+
+        let sEmbed = new MessageEmbed()
+       .setColor(`YELLOW`)
+       .setTitle("Clock In Log")
+       .setTimestamp()
+       .setThumbnail('https://i.imgur.com/3xgt3jg.png')
+       .addField("**User:**", `${message.author} has clocked in!`)
+       .setFooter(`by Retra#1337`, 'https://i.imgur.com/3xgt3jg.png')
+        let timeClock = client.channels.cache.get(`679832576571080740`);
+        timeClock.send(sEmbed);
+
+
         message.author.send(`Clocked in <@${message.author.id}> at ${d.toTimeString()}`)
+
         .then(message.delete({timeout: 5000}));
         
     }
