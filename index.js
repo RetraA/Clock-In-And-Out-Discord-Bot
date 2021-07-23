@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const {Client, Collection } = require("discord.js");
-const memberCount = require('./commands/mod/membercount')
 client.commands = new Collection();
 client.aliases = new Collection();
 require('dotenv').config();
@@ -27,7 +26,6 @@ client.on("ready", async() => {
     }); 
 
     client.user.setActivity(`Towing`, {type: 'PLAYING'});
-    memberCount(client)
 })
 
 
@@ -56,18 +54,5 @@ client.on("message", async message => {
         command.run(client, message, args);
 
 });
-
-client.on('guildMemberAdd', member => {
-    let welcomeChannel = client.channels.cache.get(`<your welcome channel>`);
-    welcomeChannel.send(`Welcome <@${member.id}> to Hooker's Towing!`)
-    console.log(`${member.user.username} joined the server`)
-    let role = member.guild.roles.cache.find(role => role.id === "<your role id>");
-    member.roles.add(role);
-});
-
-client.on('guildMemberRemove', member => {
-    let leaveChannel = client.channels.cache.get(`<your leave channel>`);
-    leaveChannel.send(`Goodbye <@${member.id}>!`)
-})
 
 client.login(process.env.TOKEN);
