@@ -28,7 +28,7 @@ module.exports = {
        .addField("**User:**", `${message.author}`)
        .addField(`**Total Minutes Worked:**`, `${finalTime}`)
        .setFooter(`by Retra#1337`, 'https://i.imgur.com/3xgt3jg.png')
-      let timeClock = client.channels.cache.get(`866501334123413535`);
+      let timeClock = client.channels.cache.get(`your channel id`);
         timeClock.send(sEmbed);
         message.author.send(`${message.author} you have clocked out!`).then(message.delete({timeout: 5000}));
 
