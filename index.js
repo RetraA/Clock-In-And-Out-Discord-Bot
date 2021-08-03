@@ -25,7 +25,7 @@ client.on("ready", async() => {
         status: "online",
     }); 
 
-    client.user.setActivity(`Towing`, {type: 'PLAYING'});
+    client.user.setActivity(``, {type: 'PLAYING'});
 })
 
 
